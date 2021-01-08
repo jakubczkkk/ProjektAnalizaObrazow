@@ -30,15 +30,16 @@ def process_image(file_name):
     return cat
 
 
-def training_cats():
+def training_animals(animal):
 
     data = []
 
     for i in range(1, 501):
-        file_name = f"images/training/cats/cat.{i}.jpg"
+        file_name = f"images/training/{animal}/cat.{i}.jpg"
 
-        cat = process_image(file_name)
+        animal = process_image(file_name)
 
-        data.append(cat)
+        data.append(animal)
 
     return data
+
