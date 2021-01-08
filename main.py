@@ -1,38 +1,37 @@
 import os
+
 try:
     import PySimpleGUI as sg
+    import test
 except Exception as e:
-    agree = input("Czy zgadzasz sie na zainstalowanie modulow (PySimpleGUI oraz Pillow)? (y/n): ")
+    agree = input("Czy zgadzasz sie na zainstalowanie modulow (PySimpleGUI oraz scikit-image)? (y/n): ")
     if(agree == 'y'):
         if not os.system('python -m pip install pysimplegui'):
             import PySimpleGUI as sg
+        if not os.system('python -m pip install scikit-image'):
+            import test
     else:
         print('Koncze dzialanie programu')
         exit(1)
     
 
-def loadImage(window):
-    inputField: sg.Input = window['filename']
-    image: sg.Image = window['image']
-    try:
-        image.update(inputField.get(), size=(400, 300))
-    except:
-        print('no such file')
-
 def chooseAction(event, window):
     if event == 'OK':
-        print('Changing image')
-        loadImage(window)
+        inputField: sg.Input = window[FILEPATH]
+        test.load_image(inputField.get())
     if event == 'searchForCat!':
         print('searching for cat!')
 
 
 
+#keys
+FILEPATH = 'fpath'
+
+
 sg.theme('Dark Blue 3')
 layout = [
-    [sg.FileBrowse(), sg.Input(key='filename')],
+    [sg.FileBrowse(), sg.Input(key=FILEPATH)],
     [sg.OK()],
-    [sg.Image(key='image', size=(400, 300), background_color='gray')],
     [sg.Button('searchForCat!'), sg.Text(key='text')]
 ]
 
