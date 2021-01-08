@@ -12,8 +12,11 @@ kitku = transform.resize(kitku, (300, 300))
 thresh = threshold_otsu(kitku)
 kitku = kitku > thresh
 
-kitku = morphology.erosion(kitku)
-kitku = morphology.dilation(kitku)
+kitku = morphology.binary_erosion(kitku)
+kitku = morphology.binary_dilation(kitku)
+
+kitku = morphology.remove_small_objects(kitku, min_size=50)
+kitku = morphology.remove_small_holes(kitku, area_threshold=50)
 
 io.imshow(kitku)
 io.show()
