@@ -1,14 +1,11 @@
 import os
 try:
     import PySimpleGUI as sg
-    import PIL
 except Exception as e:
     agree = input("Czy zgadzasz sie na zainstalowanie modulow (PySimpleGUI oraz Pillow)? (y/n): ")
     if(agree == 'y'):
         if not os.system('python -m pip install pysimplegui'):
             import PySimpleGUI as sg
-        if not os.system('python -m pip install pillow'):
-            import PIL
     else:
         print('Koncze dzialanie programu')
         exit(1)
