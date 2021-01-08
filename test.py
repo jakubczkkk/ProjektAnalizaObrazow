@@ -35,7 +35,7 @@ def training_animals(animal):
     data = []
 
     for i in range(1, 501):
-        file_name = f"images/training/{animal}/cat.{i}.jpg"
+        file_name = f"images/training/{animal}s/{animal}.{i}.jpg"
 
         animal = process_image(file_name)
 
