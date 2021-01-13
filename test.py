@@ -34,12 +34,16 @@ def training_animals(animal):
 
     data = []
 
-    for i in range(1, 501):
+    for i in range(1, 101):
         file_name = f"images/training/{animal}s/{animal}.{i}.jpg"
 
-        animal = process_image(file_name)
+        new_animal = process_image(file_name)
 
-        data.append(animal)
+        data.append(new_animal)
 
     return data
 
+cats = training_animals('cat')
+# print(len(cats))
+io.imshow(cats[28])
+io.show()

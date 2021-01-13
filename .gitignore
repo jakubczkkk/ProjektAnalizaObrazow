@@ -1,4 +1,6 @@
 __pycache__/
 p/
 .vscode/
-images
+images/
+build/
+dist/
