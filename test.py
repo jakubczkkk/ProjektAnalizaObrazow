@@ -18,16 +18,16 @@ def process_image(file_name):
     cat = color.rgb2gray(io.imread(file_name))
     cat = transform.resize(cat, (300, 300))
 
-    thresh = threshold_otsu(cat)
-    cat = cat > thresh
+    # thresh = threshold_otsu(cat)
+    # cat = cat > thresh
 
-    cat = morphology.binary_erosion(cat)
-    cat = morphology.binary_dilation(cat)
+    # cat = morphology.binary_erosion(cat)
+    # cat = morphology.binary_dilation(cat)
 
-    cat = morphology.remove_small_objects(cat, min_size=50)
-    cat = morphology.remove_small_holes(cat, area_threshold=50)
+    # cat = morphology.remove_small_objects(cat, min_size=50)
+    # cat = morphology.remove_small_holes(cat, area_threshold=50)
 
-    return cat
+    return cat.flatten()
 
 
 def training_animals(animal):
@@ -42,8 +42,3 @@ def training_animals(animal):
         data.append(new_animal)
 
     return data
-
-cats = training_animals('cat')
-# print(len(cats))
-io.imshow(cats[28])
-io.show()
