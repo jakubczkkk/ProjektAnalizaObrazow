@@ -1,4 +1,8 @@
 __pycache__/
-p/
+venv/
 .vscode/
-images
+images/
+build/
+dist/
+.gitignore
+neuralnet/
