@@ -1,4 +1,10 @@
 __pycache__/
 p/
+venv/
 .vscode/
-images
+images/
+build/
+dist/
+neuralnet/
+app_model.mat
+
