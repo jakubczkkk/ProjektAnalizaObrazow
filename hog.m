@@ -2,6 +2,7 @@ function [featureVector] = hog(imageName)
 
 im = imread('test_hog.jpg');
 imageSize = 256;
+cellSize = 16;
 im = imresize(im, [imageSize imageSize]);
 
 % konwersja do szarosci
@@ -31,12 +32,12 @@ featureVector = [];
 
 % petla po blokach
 
-for i = 1:imageSize/8-1
+for i = 1:imageSize/16-1
     
-    for j = 1:imageSize/8-1
+    for j = 1:imageSize/16-1
        
-        angleFromCurrentBlock = angle(8*(i-1)+1 : 8*(i-1)+16, 8*(j-1)+1 : 8*(j-1)+16);
-        magnitudeFromCurrentBlock = magnitude(8*(i-1)+1 : 8*(i-1)+16, 8*(j-1)+1 : 8*(j-1)+16);
+        angleFromCurrentBlock = angle(cellSize*(i-1)+1 : cellSize*(i-1)+cellSize*2, cellSize*(j-1)+1 : cellSize*(j-1)+cellSize*2);
+        magnitudeFromCurrentBlock = magnitude(cellSize*(i-1)+1 : cellSize*(i-1)+cellSize*2, cellSize*(j-1)+1 : cellSize*(j-1)+cellSize*2);
         
         blockFeatureVector = [];
         
@@ -50,12 +51,12 @@ for i = 1:imageSize/8-1
                 
                 bins = zeros(1, 9);
                 
-                for k = 1:8
+                for k = 1:cellSize
 
-                    for l = 1:8
+                    for l = 1:cellSize
 
-                        pixelAngle = angleFromCurrentBlock(k + 8 *(a-1), l + 8 *(b-1));
-                        pixelMagnitude = magnitudeFromCurrentBlock(k + 8 *(a-1), l + 8 *(b-1));
+                        pixelAngle = angleFromCurrentBlock(k + cellSize *(a-1), l + cellSize *(b-1));
+                        pixelMagnitude = magnitudeFromCurrentBlock(k + cellSize *(a-1), l + cellSize *(b-1));
 
                         if pixelAngle <= 10
                             bins(9) = bins(9) + pixelMagnitude * (10 - pixelAngle) / 20;
