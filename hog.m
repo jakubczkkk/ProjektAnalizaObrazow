@@ -1,6 +1,6 @@
 function [featureVector] = hog(imageName)
 
-im = imread('test_hog.jpg');
+im = imread(imageName);
 imageSize = 256;
 cellSize = 16;
 im = imresize(im, [imageSize imageSize]);
@@ -32,9 +32,9 @@ featureVector = [];
 
 % petla po blokach
 
-for i = 1:imageSize/16-1
+for i = 1:imageSize/cellSize-1
     
-    for j = 1:imageSize/16-1
+    for j = 1:imageSize/cellSize-1
        
         angleFromCurrentBlock = angle(cellSize*(i-1)+1 : cellSize*(i-1)+cellSize*2, cellSize*(j-1)+1 : cellSize*(j-1)+cellSize*2);
         magnitudeFromCurrentBlock = magnitude(cellSize*(i-1)+1 : cellSize*(i-1)+cellSize*2, cellSize*(j-1)+1 : cellSize*(j-1)+cellSize*2);
