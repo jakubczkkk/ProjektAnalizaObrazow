@@ -1,2 +1,0 @@
-# ProjektAnalizaObrazow
-none
