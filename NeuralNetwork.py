@@ -2,9 +2,9 @@ import numpy as np
 
 class NeuralNetwork:
     
-    def __init__(self):
+    def __init__(self, p=2):
         np.random.seed(1)
-        self.weights = 2 * np.random.random((2, 1)) - 1  # 2 to chyba liczba parametrów danych wejściowych
+        self.weights = 2 * np.random.random((p, 1)) - 1  # 2 to chyba liczba parametrów danych wejściowych
 
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
