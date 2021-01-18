@@ -1,6 +1,6 @@
 function [featureVector] = hog(imageName)
 
-im = imread(imageName);
+im = imread('test_hog.jpg');
 imageSize = 256;
 im = imresize(im, [imageSize imageSize]);
 
@@ -103,7 +103,7 @@ for i = 1:imageSize/8-1
         % po zebraniu bins ze wszystkich komórek z bloku, normalizujemy
         % blockFeatureVector
         
-        blockFeatureVector = blockFeatureVector / sqrt(sum(blockFeatureVector.^2));
+        blockFeatureVector = blockFeatureVector / sqrt(sum(blockFeatureVector.^2) + .001);
         
         featureVector = [featureVector, blockFeatureVector];
         
