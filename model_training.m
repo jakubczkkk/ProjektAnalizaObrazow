@@ -1,5 +1,5 @@
 % defining storages for images
-training_data_store = imageDatastore('./images/fruits/train/',...
+training_data_store = imageDatastore('./images/fruits/trainprep2/',...
     'IncludeSubfolders', true, 'FileExtensions', {'.png', '.jpg'}, 'LabelSource', 'foldernames');
 
 

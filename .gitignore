@@ -1,9 +1,12 @@
 __pycache__/
+p/
 venv/
 .vscode/
 images/
 build/
 dist/
+testImages/
 neuralnet/
 app_model.mat
 *.mat
+
