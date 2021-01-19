@@ -1,8 +1,1 @@
-__pycache__/
-venv/
-.vscode/
-images/
-build/
-dist/
 .gitignore
-neuralnet/
