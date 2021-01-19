@@ -2,7 +2,7 @@ function [featureVector] = hog(image)
 
 im = image;
 imageSize = 256;
-cellSize = 16;
+cellSize = 32;
 im = imresize(im, [imageSize imageSize]);
 
 % konwersja do szarosci

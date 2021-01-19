@@ -1,0 +1,5 @@
+load convnet
+
+training_data_store = imageDatastore('./images/fruits/train/',...
+    'IncludeSubfolders', true, 'FileExtensions', {'.png', '.jpg'}, 'LabelSource', 'foldernames');
+
