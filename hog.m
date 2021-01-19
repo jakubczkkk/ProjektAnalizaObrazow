@@ -1,8 +1,8 @@
-function [featureVector] = hog(imageName)
+function [featureVector] = hog(image)
 
-im = imread(imageName);
+im = image;
 imageSize = 256;
-cellSize = 16;
+cellSize = 32;
 im = imresize(im, [imageSize imageSize]);
 
 % konwersja do szarosci
