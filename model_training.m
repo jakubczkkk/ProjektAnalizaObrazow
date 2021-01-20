@@ -1,3 +1,5 @@
+clc;
+clearvars;
 % defining storages for images
 training_data_store = imageDatastore('./images/fruits/train/',...
     'IncludeSubfolders', true, 'FileExtensions', {'.png', '.jpg'}, 'LabelSource', 'foldernames');
@@ -30,10 +32,11 @@ end
 HOG = [];
 for i = 1:training_image_count
     image = readimage(training_data_store, i);
+    color_f = get_color_features(image);
     new_row = hog(image);
-    HOG = [HOG ; new_row];
+    
+    HOG = [HOG ; [new_row color_f]];
 end
-
 
 
 
