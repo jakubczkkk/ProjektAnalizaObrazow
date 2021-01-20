@@ -27,16 +27,10 @@ for i = 1:size(training_labeled_count,1)
     training_image_count = training_image_count + training_labeled_count{i,2};
 end
 
-
-
 HOG = [];
 for i = 1:training_image_count
     image = readimage(training_data_store, i);
     color_f = get_color_features(image);
     new_row = hog(image);
-    
     HOG = [HOG ; [new_row color_f]];
 end
-
-
-
