@@ -1,10 +1,13 @@
 function [featureVector] = hog(image)
 
 im = image;
+% imshow(im)
+
 imageSize = 256;
 cellSize = 32;
 im = imresize(im, [imageSize imageSize]);
 
+% size(im)
 % konwersja do szarosci
 new_im = double(rgb2gray(im)) / 255;
 

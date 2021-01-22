@@ -5,6 +5,8 @@ imageSize = 256;
 cellSize = 32;
 im = imresize(im, [imageSize imageSize]);
 
-featureVector = extractHOGFeatures(im, 'CellSize', [cellSize cellSize]);
-
+featureVector1 = extractHOGFeatures(im, 'CellSize', [cellSize cellSize]);
+image = rgb2gray(image);
+featureVector2 = extractLBPFeatures(image);
+featureVector = [featureVector1 featureVector2 ];
 end
