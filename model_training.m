@@ -4,10 +4,8 @@ clearvars;
 training_data_store = imageDatastore('./images/fruits/train/',...
     'IncludeSubfolders', true, 'FileExtensions', {'.png', '.jpg'}, 'LabelSource', 'foldernames');
 
+training_labeled_count = countEachLabel(training_data_store);
 
-training_labeled_count = countEachLabel(training_data_store)
-
-% 
 % labels for network output testing
 training_labels = [];
 k = 0;

@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration file="C:\Users\Wiki\Desktop\AO - projekt\ProjektAnalizaObrazow\Klasyfikator owocw.prj" location="C:\Users\Wiki\Desktop\AO - projekt\ProjektAnalizaObrazow" name="Klasyfikator owocw" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="3611208973" file="C:\Users\Rafal\piaty_semestr\analiza_obrazow\ProjektAnalizaObrazow\Klasyfikator owocw.prj" location="C:\Users\Rafal\piaty_semestr\analiza_obrazow\ProjektAnalizaObrazow" name="Klasyfikator owocw" target="target.mlapps" target-name="Package App">
     <param.appname>Klasyfikator owocw</param.appname>
     <param.authnamewatermark />
     <param.email />
@@ -8,7 +8,7 @@
     <param.icons />
     <param.summary />
     <param.description />
-    <param.screenshot>C:\Users\Wiki\AppData\Local\Temp\tp4456f762_4ba2_4ed2_bba5_257a08351042.png</param.screenshot>
+    <param.screenshot />
     <param.version>1.0</param.version>
     <param.products.name />
     <param.products.id />
@@ -24,6 +24,7 @@
       <param.icons />
       <param.summary />
       <param.description />
+      <param.screenshot />
       <param.version />
       <param.products.name />
       <param.products.id />
@@ -38,19 +39,12 @@
     <fileset.resources />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\Wiki\Desktop\AO - projekt" name="ProjektAnalizaObrazow" optional="false">C:\Users\Wiki\Desktop\AO - projekt\ProjektAnalizaObrazow</file>
+      <file location="C:\Users\Rafal\piaty_semestr\analiza_obrazow" name="ProjektAnalizaObrazow" optional="false">C:\Users\Rafal\piaty_semestr\analiza_obrazow\ProjektAnalizaObrazow</file>
     </build-deliverables>
     <workflow />
     <matlab>
       <root>C:\Program Files\MATLAB\R2020b</root>
-      <toolboxes>
-        <toolbox name="neuralnetwork" />
-      </toolboxes>
-      <toolbox>
-        <neuralnetwork>
-          <enabled>true</enabled>
-        </neuralnetwork>
-      </toolbox>
+      <toolboxes />
     </matlab>
     <platform>
       <unix>false</unix>
